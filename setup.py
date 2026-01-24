@@ -8,9 +8,11 @@ setup(
     name="tikspyder",
     version="0.1.0",
     packages=find_packages(),
+    py_modules=['main'],
     install_requires=[
         "aiohttp",
         "apify-client",
+        "httpx",
         "pandas",
         "PySocks",
         "requests",
