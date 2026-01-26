@@ -36,7 +36,11 @@ class RequestSession:
         self.req_session.headers.update(headers)
 
         # asynchronous event loop
-        self.loop = asyncio.get_event_loop()
+        try:
+            self.loop = asyncio.get_running_loop()
+        except RuntimeError:
+            self.loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(self.loop)
     
     def load_related_content(self, url: str, api_key: str) -> List[Dict]:
         '''
