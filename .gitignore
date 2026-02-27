@@ -5,3 +5,13 @@ __pycache__/
 
 # package metadata
 *.egg-info
+
+# dev specific
+*.*/
+skills-lock.json
+skill-logs.txt
+*.md
+tikspyder-agent-skill/
+
+# add readme
+!README.md
